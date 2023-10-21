@@ -48,8 +48,20 @@ body {
     /* Align items vertically in the center */
 }
 
+.reset {
+    padding-top: 10px;
+    text-align: center;
+    display: flex;
+    /* Use flexbox to arrange items horizontally */
+    justify-content: center;
+    /* Spread items horizontally */
+    align-items: center;
+    /* Align items vertically in the center */
+}
+
 .joke-setup-generate-button,
-.joke-punchline-open-button {
+.joke-punchline-open-button,
+.reset-button {
     background-color: #4caf50;
     color: #fff;
     border: none;
@@ -58,6 +70,10 @@ body {
     margin: 0 5px;
     /* Add a margin to separate buttons by 10px */
     cursor: pointer;
+}
+
+.reset-button {
+    background-color: #FF69A3;
 }
 
 .unable-button {
@@ -69,6 +85,10 @@ body {
 .joke-setup-generate-button:hover,
 .joke-punchline-open-button:hover {
     background-color: #45a049;
+}
+
+.reset-button:hover {
+    background-color: #FF0000;
 }
 
 /* Add a hover effect on the entire section */
