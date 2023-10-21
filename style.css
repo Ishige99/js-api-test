@@ -34,6 +34,7 @@ body {
 .joke-punchline {
     font-size: 18px;
     margin: 10px;
+    visibility: hidden;
 }
 
 /* Style the joke buttons */
@@ -57,6 +58,11 @@ body {
     margin: 0 5px;
     /* Add a margin to separate buttons by 10px */
     cursor: pointer;
+}
+
+.unable-button {
+    pointer-events: none;
+    background-color: #808080;
 }
 
 /* Hover effect on buttons */

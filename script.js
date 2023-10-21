@@ -7,12 +7,16 @@ const jokePunchlineText = document.getElementById("js-joke-punchline");
 const jokePunchlineOpenButton = document.getElementById("js-joke-punchline-open-button");
 
 jokeSetupGenerateButton.addEventListener("click", function () {
+  jokeSetupText.style.visibility = "visible";
   renderJokeSetup();
-  jokePunchlineOpenButton.style.display = "block";
+  jokePunchlineOpenButton.classList.remove("unable-button");
+  jokeSetupGenerateButton.classList.add("unable-button");
 });
 
 jokePunchlineOpenButton.addEventListener("click", function () {
-  jokePunchlineText.style.display = "block";
+  jokePunchlineText.style.visibility = "visible";
+  jokeSetupGenerateButton.classList.add("unable-button");
+  jokePunchlineOpenButton.classList.add("unable-button");
 })
 
 /* fetch joke text */
