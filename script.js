@@ -1,14 +1,30 @@
-const jokeGenerateButton = document.getElementById("js-joke-generate-button");
-const jokeText = document.getElementById("js-joke-text");
+// api ref: "https://github.com/15Dkatz/official_joke_api"
+const RANDOM_JOKE_API_URL = "https://official-joke-api.appspot.com/jokes/random"
 
-jokeGenerateButton.addEventListener("click", function () {
-  // ボタンが押されたときにevil ensult textを取得
-  // 取得した内容をテキストに描画
+const jokeSetupText = document.getElementById("js-joke-setup");
+const JokeSetupGenerateButton = document.getElementById("js-joke-setup-generate-button");
+const jokePunchlineText = document.getElementById("js-joke-punchline")
+const jokePunchlineGenerateButton = document.getElementById("js-joke-punchline-generate-button");
+
+JokeSetupGenerateButton.addEventListener("click", function () {
 });
 
 /* fetch joke text */
-// api ref: "https://github.com/15Dkatz/official_joke_api"
 async function fetchJokeText() {
-  const apiUrl = "https://official-joke-api.appspot.com/jokes/random";
-  const response = await fetch(apiUrl);
+  const response = await fetch(RANDOM_JOKE_API_URL)
+  return await response.json();
 }
+
+/* render joke setup and set punchline */
+async function renderJokeSetup() {
+  const joke = await fetchJokeText();
+  jokeSetupText.textContent = joke.setup;
+
+  // 事前にpunchlineにも入れておく
+  setJokePunchline(joke.punchline);
+}
+
+/* set joke punchline */
+function setJokePunchline(jokePunchline) {
+  jokePunchlineText.textContent = jokePunchline
+} 
