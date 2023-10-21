@@ -1,8 +1,71 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a background color for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+/* Style the section with the joke content */
+.section-joke {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    /* Use flexbox to arrange items horizontally */
+    flex-direction: column;
+    /* Arrange items vertically */
+}
+
+/* Style the joke text */
+.joke-text {
+    margin-bottom: 20px;
+}
+
+.joke-setup,
 .joke-punchline {
-    display: none;
+    font-size: 18px;
+    margin: 10px;
 }
 
+/* Style the joke buttons */
+.joke-button {
+    text-align: center;
+    display: flex;
+    /* Use flexbox to arrange items horizontally */
+    justify-content: center;
+    /* Spread items horizontally */
+    align-items: center;
+    /* Align items vertically in the center */
+}
+
+.joke-setup-generate-button,
 .joke-punchline-open-button {
-    display: none;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 0 5px;
+    /* Add a margin to separate buttons by 10px */
+    cursor: pointer;
 }
 
+/* Hover effect on buttons */
+.joke-setup-generate-button:hover,
+.joke-punchline-open-button:hover {
+    background-color: #45a049;
+}
+
+/* Add a hover effect on the entire section */
+.section-joke:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
